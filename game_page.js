@@ -14,25 +14,21 @@ document.getElementById("player_question").innerHTML="Question turn-"+player1_na
 document.getElementById("player_answer").innerHTML="Answer turn-"+player2_name;
 
 function send(){
-    get_word=document.getElementById("word").value;
-    word=get_word.toLowerCase();
+    number1=document.getElementById("number1").value;
+    number2=document.getElementById("number2").value;
+    actual_answer=parseInt(number1)*parseInt(number2);
 
-    charAt1=word.charAt(1);
+question_number="<h4>"+number1 +"X" number2 +"</h4>";
 
-    length_divide_2=Math.floor(word.length/2);
-    charAt2=word.charAt(length_divide_2);
+input_box="<br> Answer : <input type='text' id='input_check_box'>";
+check_button="<br><br><button class='btn btn-info' onclick='check()'";
 
-    length_minus_1=word.length-1;
-    charAt3=word.charAt(length_minus_1);
 
-    remove_charAt1=word.replace(charAt1,"_");
-    remove_charAt2=remove_charAt1.replace(chartAt2,"_");
-    remove_charAt3=remove_charAt2.replce(charAt3,"_");
-
-    question_word="<h4>Q. "+remove_charAt3+"</h4>";
+    questxion_number="<h4>" + number1 + " X "+ number2+</h4>";
     input_box="<br> Answer : <input type='text' id='input_check_box'>";
     check_button="<br> <br> <button class='btn btn-info' onclick='check()'>Check</button>";
     row=question_word+input_box+check_button;
     document.getElementById("output").innerHTML=row;
-    document.getElementById("word").value="";
+    document.getElementById("number1").value="";
+    document.getElementById("number2").value="";
 }
